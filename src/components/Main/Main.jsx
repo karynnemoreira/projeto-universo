@@ -1,4 +1,5 @@
 import "./Main.css"
+import Marte from "../../assets/marte.png"
 
 function Main() {
   return (
@@ -16,6 +17,9 @@ function Main() {
         <h2 id="titulo-planetas">Planetas e curiosidades</h2>
 
         <article>
+        <img src={Marte} alt="" />
+
+
           <h3>Marte</h3>
 
           <p>
