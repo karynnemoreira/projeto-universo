@@ -1,3 +1,5 @@
+import "./Footer.css"
+
 function Footer() {
   return (
     <footer>
@@ -5,7 +7,7 @@ function Footer() {
         <strong>Missão concluída</strong>
       </p>
 
-      <p>Projeto desenvolvido para aprender React.js</p>
+      <p>Projeto desenvolvido por Karynne Moreira, com o foco em aprender React.js</p>
     </footer>
   );
 }

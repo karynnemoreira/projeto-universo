@@ -1,0 +1,201 @@
+ /*
+  ============================================================
+  HEADER.CSS
+  Estilos do componente Header
+  ============================================================
+ */
+
+/* ------------------------------------------------------------
+   Cabeçalho
+   ------------------------------------------------------------ */
+
+/*
+  Define o cabeçalho como um container flexível.
+
+  flex-direction: column
+  - Organiza os elementos verticalmente em telas pequenas.
+
+  gap
+  - Cria espaçamento consistente entre título, descrição e
+    navegação, evitando o excesso de margin e padding.
+*/
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  /*
+    Espaçamento interno flexível.
+    O valor em rem acompanha o tamanho da fonte configurado
+    pelo navegador/usuário.
+  */
+  padding: 1.5rem 5%;
+
+  /*
+    Fundo escuro para criar contraste com os textos claros.
+  */
+  background-color: #111827;
+
+  /*
+    Cor principal dos textos do cabeçalho.
+  */
+  color: #f9fafb;
+
+  /*
+    Centraliza o conteúdo em telas pequenas.
+  */
+  text-align: center;
+}
+
+/*
+  Título principal da aplicação.
+
+  clamp() permite que o tamanho da fonte cresça
+  progressivamente de acordo com a largura da tela.
+*/
+header h1 {
+  margin: 0;
+
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.15;
+
+  color: #f9fafb;
+}
+
+/*
+  Frase introdutória do cabeçalho.
+
+  O tamanho menor cria uma hierarquia visual em relação ao h1.
+*/
+header p {
+  margin: 0;
+
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  line-height: 1.6;
+
+  color: #d1d5db;
+}
+
+/* ------------------------------------------------------------
+   Navegação
+   ------------------------------------------------------------ */
+
+/*
+  A navegação ocupa toda a largura disponível.
+
+  Isso facilita a organização dos links em dispositivos
+  pequenos.
+*/
+header nav {
+  width: 100%;
+}
+
+/*
+  Remove marcadores visuais da lista.
+
+  O reset global ficará responsável pelas demais configurações
+  gerais, portanto não repetimos box-sizing, margin ou padding
+  globais aqui.
+*/
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  list-style: none;
+}
+
+/*
+  Os links funcionam como áreas clicáveis.
+
+  O padding cria uma área de toque confortável para usuários
+  de smartphones e tablets.
+*/
+header nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+
+  border-radius: 0.5rem;
+
+  color: #f9fafb;
+  text-decoration: none;
+
+  font-weight: 600;
+
+  /*
+    Transição suave para interações com mouse.
+    A navegação continua funcionando normalmente sem depender
+    de animações.
+  */
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/*
+  Estado hover.
+
+  O contraste entre o fundo e o texto ajuda a identificar
+  visualmente o link que está sendo apontado.
+*/
+header nav a:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/*
+  Estado de foco.
+
+  É especialmente importante para pessoas que navegam
+  utilizando teclado.
+*/
+header nav a:focus-visible {
+  outline: 0.2rem solid #facc15;
+  outline-offset: 0.2rem;
+}
+
+/* ------------------------------------------------------------
+   TABLET
+   ------------------------------------------------------------ */
+
+/*
+  A partir de aproximadamente 48rem, existe mais espaço
+  horizontal disponível.
+
+  A navegação passa a funcionar em linha utilizando Flexbox.
+*/
+@media (min-width: 48rem) {
+  header {
+    padding: 2rem 6%;
+  }
+
+  header nav ul {
+    flex-direction: row;
+    justify-content: center;
+
+    gap: 1rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   DESKTOP
+   ------------------------------------------------------------ */
+
+@media (min-width: 64rem) {
+  /*
+    Aumenta levemente o espaçamento interno em telas grandes.
+  */
+  header {
+    padding: 2.5rem 8%;
+  }
+
+  header nav ul {
+    gap: 1.5rem;
+  }
+}

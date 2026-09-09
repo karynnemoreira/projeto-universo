@@ -1,0 +1,87 @@
+/*
+  ============================================================
+  FOOTER.CSS
+  Estilos do componente Footer
+  ============================================================
+ */
+
+/* ------------------------------------------------------------
+   Rodapé
+   ------------------------------------------------------------ */
+
+/*
+  Flexbox organiza os elementos do rodapé verticalmente
+  em dispositivos pequenos.
+*/
+footer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  /*
+    gap cria espaçamento consistente entre as mensagens.
+  */
+  gap: 0.5rem;
+
+  /*
+    Padding flexível para evitar um rodapé apertado em
+    dispositivos pequenos.
+  */
+  padding: 2rem 5%;
+
+  /*
+    Fundo escuro cria uma separação clara entre o conteúdo
+    principal e o rodapé.
+  */
+  background-color: #111827;
+
+  /*
+    Texto claro sobre fundo escuro oferece bom contraste.
+  */
+  color: #f9fafb;
+
+  text-align: center;
+}
+
+/*
+  Remove margens específicas dos parágrafos para que o
+  espaçamento seja controlado principalmente pelo gap.
+*/
+footer p {
+  margin: 0;
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  color: #d1d5db;
+}
+
+/*
+  Destaca a mensagem "Missão concluída".
+*/
+footer strong {
+  color: #facc15;
+
+  font-size: 1.05rem;
+}
+
+/* ------------------------------------------------------------
+   TABLET
+   ------------------------------------------------------------ */
+
+@media (min-width: 48rem) {
+  footer {
+    padding: 2.5rem 6%;
+  }
+}
+
+/* ------------------------------------------------------------
+   DESKTOP
+   ------------------------------------------------------------ */
+
+@media (min-width: 64rem) {
+  footer {
+    padding: 3rem 8%;
+  }
+}
